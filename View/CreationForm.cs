@@ -20,7 +20,7 @@ namespace View
         }
 
         private IFigures _Figures;
-        private bool _RadiusmaskedTextBox=false;
+        private bool _RadiusmaskedTextBox = false;
         private bool _HeightmaskedTextBoxPYR = false;
         private bool _AreamasketTextBox = false;
         private bool _HeightmaskedTextBoxPAR = false;
@@ -30,36 +30,33 @@ namespace View
         /// <summary>
         /// Видимость groupBox
         /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
         private void FigureComboBox_SelectedIndexChanged(object sender, EventArgs e)
         {
-            switch(FigureComboBox.SelectedIndex)
+            switch (FigureComboBox.SelectedIndex)
             {
                 case 0:
-                    {
-                        SpheregroupBox.Enabled = true;
-                        PyramidgroupBox.Enabled = false;
-                        ParallelepipedgroupBox.Enabled = false;
-                        break;
-                    }
+                {
+                    SpheregroupBox.Enabled = true;
+                    PyramidgroupBox.Enabled = false;
+                    ParallelepipedgroupBox.Enabled = false;
+                    break;
+                }
                 case 1:
-                    {
-                        SpheregroupBox.Enabled = false;
-                        PyramidgroupBox.Enabled = true;
-                        ParallelepipedgroupBox.Enabled = false;
-                        break;
-                    }
+                {
+                    SpheregroupBox.Enabled = false;
+                    PyramidgroupBox.Enabled = true;
+                    ParallelepipedgroupBox.Enabled = false;
+                    break;
+                }
                 case 2:
-                    {
-                        SpheregroupBox.Enabled = false;
-                        PyramidgroupBox.Enabled = false;
-                        ParallelepipedgroupBox.Enabled = true;
-                        break;
-                    }
+                {
+                    SpheregroupBox.Enabled = false;
+                    PyramidgroupBox.Enabled = false;
+                    ParallelepipedgroupBox.Enabled = true;
+                    break;
+                }
             }
         }
-
 
 
         private void CreationForm_Load(object sender, EventArgs e)
@@ -83,8 +80,10 @@ namespace View
         /// </summary>
         private void AddButton_Click(object sender, EventArgs e)
         {
-            bool exitState =false;
-            if ((RadiusmaskedTextBox.Text != "") || (HeightmaskedTextBoxPYR.Text != "") || (AreamaskedTextBox.Text != "") || (HeightmaskedTextBoxPAR.Text != "") || (LenghtmaskedTextBox.Text != "") || (WidthmaskedTextBox.Text != "") )
+            bool exitState = false;
+            if ((RadiusmaskedTextBox.Text != "") || (HeightmaskedTextBoxPYR.Text != "") ||
+                (AreamaskedTextBox.Text != "") || (HeightmaskedTextBoxPAR.Text != "") ||
+                (LenghtmaskedTextBox.Text != "") || (WidthmaskedTextBox.Text != ""))
             {
                 exitState = true;
             }
@@ -94,7 +93,7 @@ namespace View
             }
             else if ((FigureComboBox.SelectedIndex == 0) && !(exitState))
             {
-                if (!(_RadiusmaskedTextBox ))
+                if (!(_RadiusmaskedTextBox))
                     MessageBox.Show("Радиус шара не введен!");
                 else
                     exitState = true;
@@ -180,7 +179,7 @@ namespace View
                 }
             }
         }
-        
+
         /// <summary>
         /// Если поле пустое
         /// </summary>
@@ -262,6 +261,5 @@ namespace View
             }
         }
 
-      
     }
 }

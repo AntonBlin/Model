@@ -55,8 +55,6 @@ namespace View
         /// <summary>
         /// Изменение 
         /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
         private void Modifybutton_Click(object sender, EventArgs e)
         {
             if (iFiguresBindingSource.Current != null)
@@ -133,8 +131,6 @@ namespace View
             }
         }
 
-
-
         //Поиск 
         private void buttonSearch_Click(object sender, EventArgs e)
         {
@@ -172,9 +168,11 @@ namespace View
             
         }
 
+        //Обновить таблицу
         private void Refreshbutton_Click(object sender, EventArgs e)
         {
             iFiguresBindingSource.DataSource =_figureses;
         }
+
     }
 }

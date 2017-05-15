@@ -30,6 +30,7 @@
         {
             this.components = new System.ComponentModel.Container();
             this.FiguresGroupBox = new System.Windows.Forms.GroupBox();
+            this.Refreshbutton = new System.Windows.Forms.Button();
             this.comboBoxSearch = new System.Windows.Forms.ComboBox();
             this.buttonSearch = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
@@ -48,7 +49,6 @@
             this.закрытьToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.saveFileDialog = new System.Windows.Forms.SaveFileDialog();
             this.openFileDialog = new System.Windows.Forms.OpenFileDialog();
-            this.Refreshbutton = new System.Windows.Forms.Button();
             this.FiguresGroupBox.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.FiguresdataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.iFiguresBindingSource)).BeginInit();
@@ -69,29 +69,37 @@
             this.FiguresGroupBox.Dock = System.Windows.Forms.DockStyle.Fill;
             this.FiguresGroupBox.Location = new System.Drawing.Point(0, 24);
             this.FiguresGroupBox.Name = "FiguresGroupBox";
-            this.FiguresGroupBox.Size = new System.Drawing.Size(595, 202);
+            this.FiguresGroupBox.Size = new System.Drawing.Size(420, 206);
             this.FiguresGroupBox.TabIndex = 0;
             this.FiguresGroupBox.TabStop = false;
             this.FiguresGroupBox.Text = "Таблица";
             // 
+            // Refreshbutton
+            // 
+            this.Refreshbutton.Location = new System.Drawing.Point(220, 111);
+            this.Refreshbutton.Name = "Refreshbutton";
+            this.Refreshbutton.Size = new System.Drawing.Size(75, 40);
+            this.Refreshbutton.TabIndex = 25;
+            this.Refreshbutton.Text = "Обновить";
+            this.Refreshbutton.UseVisualStyleBackColor = true;
+            this.Refreshbutton.Click += new System.EventHandler(this.Refreshbutton_Click);
+            // 
             // comboBoxSearch
             // 
-            this.comboBoxSearch.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.comboBoxSearch.FormattingEnabled = true;
             this.comboBoxSearch.Items.AddRange(new object[] {
             "Фигура",
             "Объем"});
-            this.comboBoxSearch.Location = new System.Drawing.Point(213, 58);
+            this.comboBoxSearch.Location = new System.Drawing.Point(301, 55);
             this.comboBoxSearch.Name = "comboBoxSearch";
-            this.comboBoxSearch.Size = new System.Drawing.Size(121, 21);
+            this.comboBoxSearch.Size = new System.Drawing.Size(103, 21);
             this.comboBoxSearch.TabIndex = 24;
             // 
             // buttonSearch
             // 
-            this.buttonSearch.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.buttonSearch.Location = new System.Drawing.Point(234, 97);
+            this.buttonSearch.Location = new System.Drawing.Point(301, 82);
             this.buttonSearch.Name = "buttonSearch";
-            this.buttonSearch.Size = new System.Drawing.Size(75, 23);
+            this.buttonSearch.Size = new System.Drawing.Size(107, 23);
             this.buttonSearch.TabIndex = 22;
             this.buttonSearch.Text = "Поиск";
             this.buttonSearch.UseVisualStyleBackColor = true;
@@ -100,7 +108,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(241, 16);
+            this.label1.Location = new System.Drawing.Point(330, 13);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(39, 13);
             this.label1.TabIndex = 5;
@@ -108,16 +116,16 @@
             // 
             // textBoxSearch
             // 
-            this.textBoxSearch.Location = new System.Drawing.Point(213, 32);
+            this.textBoxSearch.Location = new System.Drawing.Point(301, 29);
             this.textBoxSearch.Name = "textBoxSearch";
-            this.textBoxSearch.Size = new System.Drawing.Size(96, 20);
+            this.textBoxSearch.Size = new System.Drawing.Size(103, 20);
             this.textBoxSearch.TabIndex = 4;
             // 
             // Modifybutton
             // 
-            this.Modifybutton.Location = new System.Drawing.Point(141, 163);
+            this.Modifybutton.Location = new System.Drawing.Point(220, 65);
             this.Modifybutton.Name = "Modifybutton";
-            this.Modifybutton.Size = new System.Drawing.Size(66, 27);
+            this.Modifybutton.Size = new System.Drawing.Size(75, 40);
             this.Modifybutton.TabIndex = 3;
             this.Modifybutton.Text = "Изменить";
             this.Modifybutton.UseVisualStyleBackColor = true;
@@ -125,10 +133,9 @@
             // 
             // Removebutton
             // 
-            this.Removebutton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.Removebutton.Location = new System.Drawing.Point(75, 163);
+            this.Removebutton.Location = new System.Drawing.Point(220, 157);
             this.Removebutton.Name = "Removebutton";
-            this.Removebutton.Size = new System.Drawing.Size(64, 27);
+            this.Removebutton.Size = new System.Drawing.Size(75, 40);
             this.Removebutton.TabIndex = 2;
             this.Removebutton.Text = "Удалить";
             this.Removebutton.UseMnemonic = false;
@@ -143,10 +150,10 @@
             this.dataGridViewTextBoxColumn1,
             this.dataGridViewTextBoxColumn2});
             this.FiguresdataGridView.DataSource = this.iFiguresBindingSource;
-            this.FiguresdataGridView.Location = new System.Drawing.Point(3, 16);
+            this.FiguresdataGridView.Location = new System.Drawing.Point(7, 19);
             this.FiguresdataGridView.Name = "FiguresdataGridView";
             this.FiguresdataGridView.RowHeadersVisible = false;
-            this.FiguresdataGridView.Size = new System.Drawing.Size(204, 135);
+            this.FiguresdataGridView.Size = new System.Drawing.Size(207, 178);
             this.FiguresdataGridView.TabIndex = 0;
             // 
             // dataGridViewTextBoxColumn1
@@ -168,10 +175,9 @@
             // 
             // Addbutton
             // 
-            this.Addbutton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.Addbutton.Location = new System.Drawing.Point(3, 163);
+            this.Addbutton.Location = new System.Drawing.Point(220, 19);
             this.Addbutton.Name = "Addbutton";
-            this.Addbutton.Size = new System.Drawing.Size(66, 27);
+            this.Addbutton.Size = new System.Drawing.Size(75, 40);
             this.Addbutton.TabIndex = 1;
             this.Addbutton.Text = "Добавить";
             this.Addbutton.UseVisualStyleBackColor = true;
@@ -183,7 +189,7 @@
             this.файлToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(595, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(420, 24);
             this.menuStrip1.TabIndex = 3;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -222,24 +228,16 @@
             // 
             this.openFileDialog.FileName = "openFileDialog1";
             // 
-            // Refreshbutton
-            // 
-            this.Refreshbutton.Location = new System.Drawing.Point(213, 163);
-            this.Refreshbutton.Name = "Refreshbutton";
-            this.Refreshbutton.Size = new System.Drawing.Size(66, 27);
-            this.Refreshbutton.TabIndex = 25;
-            this.Refreshbutton.Text = "Обновить";
-            this.Refreshbutton.UseVisualStyleBackColor = true;
-            this.Refreshbutton.Click += new System.EventHandler(this.Refreshbutton_Click);
-            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(595, 226);
+            this.ClientSize = new System.Drawing.Size(420, 230);
             this.Controls.Add(this.FiguresGroupBox);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
+            this.MaximumSize = new System.Drawing.Size(436, 269);
+            this.MinimumSize = new System.Drawing.Size(436, 269);
             this.Name = "MainForm";
             this.Text = "Тригонометрические фигуры";
             this.FiguresGroupBox.ResumeLayout(false);
