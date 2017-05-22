@@ -40,7 +40,7 @@ namespace Model
             get
             {
             var volume = Height * Lenght * Width;
-                return volume;
+                return Math.Round(volume);
             }
         }
         /// <summary>
@@ -52,7 +52,7 @@ namespace Model
             set
             {
                 if (value <= 0)
-                    throw new ArgumentException("Значение не должно быть отрицательным, введите высоту заново");
+                    throw new ArgumentException("Значение не должно быть отрицательным, и равным нулю. Введите высоту заново");
                 _height = value;
             }
         }
@@ -65,7 +65,7 @@ namespace Model
             set
             {
                 if (value <= 0)
-                    throw new ArgumentException("Значение не должно быть отрицательным, введите длину заново");
+                    throw new ArgumentException("Значение не должно быть отрицательным, и равным нулю. Введите длину заново");
                 _lenght = value;
             }
         }
@@ -78,7 +78,7 @@ namespace Model
             set
             {
                 if (value <= 0)
-                    throw new ArgumentException("Значение не должно быть отрицательным, введите ширину заново");
+                    throw new ArgumentException("Значение не должно быть отрицательным, и равным нулю. Введите ширину заново");
                 _width = value;
             }
         }

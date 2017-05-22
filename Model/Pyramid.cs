@@ -49,7 +49,7 @@ namespace Model
             set
             {
                 if (value <= 0)
-                    throw new ArgumentException("Значение не должно быть отрицательным, введите высоту заново");
+                    throw new ArgumentException("Значение не должно быть отрицательным, и равным нулю. Введите высоту заново");
                 _height = value;
             }
         }
@@ -62,7 +62,7 @@ namespace Model
             set
             {
                 if (value <= 0)
-                    throw new ArgumentException("Значение не должно быть отрицательным, введите сторону заново");
+                    throw new ArgumentException("Значение не должно быть отрицательным, и равным нулю. Введите сторону заново");
                 _area = value;
             }
         }

@@ -46,6 +46,30 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Controls\iFigureControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\iFigureControl.Designer.cs">
+      <DependentUpon>iFigureControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\parallelepipedControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\parallelepipedControl.Designer.cs">
+      <DependentUpon>parallelepipedControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\pyramidControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\pyramidControl.Designer.cs">
+      <DependentUpon>pyramidControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\sphereControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\sphereControl.Designer.cs">
+      <DependentUpon>sphereControl.cs</DependentUpon>
+    </Compile>
     <Compile Include="MainForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -60,6 +84,18 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Controls\iFigureControl.resx">
+      <DependentUpon>iFigureControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\parallelepipedControl.resx">
+      <DependentUpon>parallelepipedControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\pyramidControl.resx">
+      <DependentUpon>pyramidControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\sphereControl.resx">
+      <DependentUpon>sphereControl.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="CreationForm.resx">
       <DependentUpon>CreationForm.cs</DependentUpon>
     </EmbeddedResource>

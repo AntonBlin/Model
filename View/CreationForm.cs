@@ -89,26 +89,26 @@ namespace View
             }
             if (FigureComboBox.SelectedIndex == -1)
             {
-                MessageBox.Show("Не была выбрана геометрическая фигура");
+                MessageBox.Show(@"Не была выбрана геометрическая фигура");
             }
             else if ((FigureComboBox.SelectedIndex == 0) && !(exitState))
             {
                 if (!(_RadiusmaskedTextBox))
-                    MessageBox.Show("Радиус шара не введен!");
+                    MessageBox.Show(@"Радиус шара не введен!");
                 else
                     exitState = true;
             }
             else if ((FigureComboBox.SelectedIndex == 1) && !(exitState))
             {
                 if (!(_HeightmaskedTextBoxPYR && _AreamasketTextBox))
-                    MessageBox.Show("Высота или Площадь не введены!");
+                    MessageBox.Show(@"Высота или Площадь не введены!");
                 else
                     exitState = true;
             }
             else if ((FigureComboBox.SelectedIndex == 2) && !(exitState))
             {
                 if (!(_HeightmaskedTextBoxPAR && _LenghtmaskedTextBox && _WightmaskedTextBox))
-                    MessageBox.Show("Высота, длина или ширина не введен!");
+                    MessageBox.Show(@"Высота, длина или ширина не введен!");
                 else
                     exitState = true;
             }
@@ -125,30 +125,30 @@ namespace View
             {
                 if (FigureComboBox.SelectedIndex == 0)
                 {
-                    var Sph = new Sphere();
+                    var sphere = new Sphere();
 
-                    Sph.Radius = Convert.ToDouble(RadiusmaskedTextBox.Text);
-                    _Figures = Sph;
-                    Sph.Name = "Шар";
+                    sphere.Radius = Convert.ToDouble(RadiusmaskedTextBox.Text);
+                    _Figures = sphere;
+                    sphere.Name = "Шар";
                 }
                 else if (FigureComboBox.SelectedIndex == 1)
                 {
-                    var Pyr = new Pyramid();
+                    var pyramid = new Pyramid();
 
-                    Pyr.Height = Convert.ToDouble(HeightmaskedTextBoxPYR.Text);
-                    Pyr.Area = Convert.ToDouble(AreamaskedTextBox.Text);
-                    _Figures = Pyr;
-                    Pyr.Name = "Пирамида";
+                    pyramid.Height = Convert.ToDouble(HeightmaskedTextBoxPYR.Text);
+                    pyramid.Area = Convert.ToDouble(AreamaskedTextBox.Text);
+                    _Figures = pyramid;
+                    pyramid.Name = "Пирамида";
                 }
                 else if (FigureComboBox.SelectedIndex == 2)
                 {
-                    var Par = new Parallelepiped();
+                    var parallelepiped = new Parallelepiped();
 
-                    Par.Height = Convert.ToDouble(HeightmaskedTextBoxPAR.Text);
-                    Par.Lenght = Convert.ToDouble(LenghtmaskedTextBox.Text);
-                    Par.Width = Convert.ToDouble(WidthmaskedTextBox.Text);
-                    _Figures = Par;
-                    Par.Name = "Параллелепипед";
+                    parallelepiped.Height = Convert.ToDouble(HeightmaskedTextBoxPAR.Text);
+                    parallelepiped.Lenght = Convert.ToDouble(LenghtmaskedTextBox.Text);
+                    parallelepiped.Width = Convert.ToDouble(WidthmaskedTextBox.Text);
+                    _Figures = parallelepiped;
+                    parallelepiped.Name = "Параллелепипед";
                 }
                 return _Figures;
             }
@@ -157,25 +157,25 @@ namespace View
                 _Figures = value;
                 if (value is Model.Sphere)
                 {
-                    var Sph = (Model.Sphere) value;
+                    var sphere = (Model.Sphere) value;
                     FigureComboBox.SelectedIndex = 0;
-                    RadiusmaskedTextBox.Text = Convert.ToString(Sph.Radius);
+                    RadiusmaskedTextBox.Text = Convert.ToString(sphere.Radius);
 
                 }
                 else if (value is Model.Pyramid)
                 {
-                    var Pyr = (Model.Pyramid) value;
+                    var pyramid = (Model.Pyramid) value;
                     FigureComboBox.SelectedIndex = 1;
-                    HeightmaskedTextBoxPYR.Text = Convert.ToString(Pyr.Height);
-                    AreamaskedTextBox.Text = Convert.ToString(Pyr.Area);
+                    HeightmaskedTextBoxPYR.Text = Convert.ToString(pyramid.Height);
+                    AreamaskedTextBox.Text = Convert.ToString(pyramid.Area);
                 }
                 else if (value is Model.Parallelepiped)
                 {
-                    var Par = (Model.Parallelepiped) value;
+                    var parallelepiped = (Model.Parallelepiped) value;
                     FigureComboBox.SelectedIndex = 2;
-                    HeightmaskedTextBoxPAR.Text = Convert.ToString(Par.Height);
-                    LenghtmaskedTextBox.Text = Convert.ToString(Par.Lenght);
-                    WidthmaskedTextBox.Text = Convert.ToString(Par.Width);
+                    HeightmaskedTextBoxPAR.Text = Convert.ToString(parallelepiped.Height);
+                    LenghtmaskedTextBox.Text = Convert.ToString(parallelepiped.Lenght);
+                    WidthmaskedTextBox.Text = Convert.ToString(parallelepiped.Width);
                 }
             }
         }

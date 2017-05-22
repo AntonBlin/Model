@@ -33,7 +33,8 @@ namespace Model
                 return Math.Round(volume);
             }
         }
-     
+        
+             
         /// <summary>
         /// Радиус
         /// </summary>
@@ -43,7 +44,7 @@ namespace Model
             set
             {
                 if (value <= 0)
-                    throw new ArgumentException("Значение не должно быть отрицательным, введите радиус заново");
+                    throw new ArgumentException("Значение не должно быть отрицательным, и равняться нулю. Введите радиус заново");
                 _radius = value;
             }
         }

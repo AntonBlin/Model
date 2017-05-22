@@ -41,9 +41,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Figures\PyramidTest.cs" />
-    <Compile Include="Figures\SphereTest.cs" />
-    <Compile Include="Figures\ParallelepipedTest.cs" />
+    <Compile Include="FiguresTest\PyramidTest.cs" />
+    <Compile Include="FiguresTest\SphereTest.cs" />
+    <Compile Include="FiguresTest\ParallelepipedTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
