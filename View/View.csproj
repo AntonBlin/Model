@@ -84,6 +84,7 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Serializer.cs" />
     <EmbeddedResource Include="Controls\iFigureControl.resx">
       <DependentUpon>iFigureControl.cs</DependentUpon>
     </EmbeddedResource>

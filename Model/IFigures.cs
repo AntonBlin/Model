@@ -24,10 +24,9 @@ namespace Model
         {
             get; 
         }
-
+    }
 
     
-    }
     //Список геометрических фигур
     public class FiguresList
     {

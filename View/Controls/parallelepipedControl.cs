@@ -17,5 +17,53 @@ namespace View.Controls
         {
             InitializeComponent();
         }
+
+        /// <summary>
+        /// Инициализация Параллелепипеда
+        /// </summary>
+        public Parallelepiped Parallelepiped
+        {
+            get
+            {
+                var parallelepiped = new Parallelepiped();
+
+                try
+                {
+                    parallelepiped.Lenght = Convert.ToDouble(LenghtmaskedTextBox.Text);
+                }
+                catch (FormatException)
+                {
+                    var exception = new FormatException(@"Длина не введена.");
+                    throw exception;
+                }
+
+                try
+                {
+                    parallelepiped.Height = Convert.ToDouble(HeightmaskedTextBoxPAR.Text);
+                }
+                catch (FormatException)
+                {
+                    var exception = new FormatException(@"Высота не введена.");
+                    throw exception;
+                }
+
+                try
+                {
+                    parallelepiped.Width = Convert.ToDouble(WidthmaskedTextBox.Text);
+                }
+                catch (FormatException)
+                {
+                    var exception = new FormatException(@"Ширина не введена.");
+                    throw exception;
+                }
+                return parallelepiped;
+            }
+            set
+            {
+                HeightmaskedTextBoxPAR.Text = value.Height.ToString();
+                LenghtmaskedTextBox.Text = value.Lenght.ToString();
+                WidthmaskedTextBox.Text = value.Width.ToString();
+            }
+        }
     }
 }

@@ -17,6 +17,9 @@ namespace View.Controls
             InitializeComponent();
         }
 
+        /// <summary>
+        /// Инициализация Шара
+        /// </summary>
         public Sphere Sphere
         {
             get
@@ -29,19 +32,17 @@ namespace View.Controls
                 }
                 catch (FormatException)
                 {
-                    var exception = new FormatException(@"Радиус шара не введен!");
+                    var exception = new FormatException(@"Радиус шара не введен.");
                     throw exception;
                 }
 
                 return sphere;
             }
-
             set
             {
                 RadiusmaskedTextBox.Text = value.Radius.ToString();
 
             }
         }
-
     }
 }

@@ -16,7 +16,6 @@ namespace View
 {
     public partial class mainForm : System.Windows.Forms.Form
     {
-        private JsonSerializer serializer = new JsonSerializer();
         private object dataGridViewFigures;
         private bool _pointFixer;
         private string _filePath;
@@ -40,6 +39,10 @@ namespace View
 
             if (formAdd.ShowDialog() == DialogResult.OK)
             {
+                if (formAdd.Figures == null)
+                {
+                    return;
+                }
                 iFiguresBindingSource.Add(formAdd.Figures);
             }
         }
@@ -88,7 +91,6 @@ namespace View
         //Открыть файл
         private void openToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
             var serializer = new Newtonsoft.Json.JsonSerializer
             {
                 TypeNameHandling = Newtonsoft.Json.TypeNameHandling.Auto
@@ -97,14 +99,7 @@ namespace View
             if (openFileDialog.ShowDialog() == DialogResult.Cancel)
                 return;
             var fileName = openFileDialog.FileName;
-            using (StreamReader streamReader = new StreamReader(fileName))
-            {
-                using (Newtonsoft.Json.JsonReader jreader = new Newtonsoft.Json.JsonTextReader(streamReader))
-                {
-                   _figures = serializer.Deserialize<List<IFigures>>(jreader);
-                }
-
-            }
+            _figures = Serializer.Deserilization(fileName);
             iFiguresBindingSource.DataSource = _figures;
         }
 
@@ -114,21 +109,12 @@ namespace View
             var serializer = new Newtonsoft.Json.JsonSerializer
             {
                 TypeNameHandling = Newtonsoft.Json.TypeNameHandling.Auto
-
             };
-
             saveFileDialog.Filter = @"Список фигур(.baa)| *.baa";
             if (saveFileDialog.ShowDialog() == DialogResult.Cancel)
                 return;
             var fileName = saveFileDialog.FileName;
-            using (StreamWriter streamWriter = new StreamWriter(fileName))
-            {
-                using (Newtonsoft.Json.JsonWriter jwriter = new Newtonsoft.Json.JsonTextWriter(streamWriter))
-                {
-                    serializer.Serialize(jwriter, _figures);
-                }
-                MessageBox.Show(@"Сохранено!");
-            }
+           Serializer.Serilization(_figures, fileName);
         }
 
         //Поиск 
